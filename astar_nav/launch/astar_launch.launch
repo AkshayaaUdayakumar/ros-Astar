@@ -1,0 +1,11 @@
+<launch>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find astar_nav)/maps/map.yaml" />
+    <node name="astar_node" pkg="astar_nav" type="astar.py" output="screen" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find astar_nav)/rviz/astar_config.rviz" />
+
+    <!-- Static Transform Publisher -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom" />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_base_link" args="0 0 0 0 0 0 odom base_link" />
+</launch>
+
+

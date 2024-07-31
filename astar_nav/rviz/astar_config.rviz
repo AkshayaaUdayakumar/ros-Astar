@@ -1,0 +1,41 @@
+Panels:
+- Class: rviz/Displays
+  Name: Displays
+- Class: rviz/Selection
+  Name: Selection
+- Class: rviz/Tool Properties
+  Name: Tool Properties
+- Class: rviz/Views
+  Name: Views
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz/Grid
+      Name: Grid
+      Reference Frame: map
+    - Class: rviz/Map
+      Name: Map
+      Topic: /map
+    - Class: rviz/Path
+      Name: Path
+      Topic: /astar_path
+    - Class: rviz/Marker
+      Name: Marker
+      Topic: /astar_marker
+  Enabled: true
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+    - Class: rviz/SetGoal
+      Topic: /move_base_simple/goal
+  Views:
+    Current:
+      Class: rviz/TopDownOrtho
+      Enabled: true
+      Name: Top Down Ortho
+      Near Clip Distance: 0.01
+      Ortho Scale: 10
+      Reference Frame: map
+      Value: true
+Fixed Frame: map
+
